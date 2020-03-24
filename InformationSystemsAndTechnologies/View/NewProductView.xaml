@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="InformationSystemsAndTechnologies.View.NewProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:InformationSystemsAndTechnologies.ViewModel"
+             mc:Ignorable="d" d:DesignHeight="699" d:DesignWidth="722" Visibility="{Binding Condition}" Focusable="False" Background="FloralWhite">
+
+    <UserControl.DataContext>
+        <vm:NewProductViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Border 
+            Focusable="False"
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            Margin="183,61,180,61">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56.4"></RowDefinition>
+                    <RowDefinition Height="56.4"></RowDefinition>
+                    <RowDefinition Height="56.4"></RowDefinition>
+                    <RowDefinition Height="56.4"></RowDefinition>
+                    <RowDefinition Height="56.4"></RowDefinition>
+                    <RowDefinition Height="300"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95"></ColumnDefinition>
+                    <ColumnDefinition Width="261"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label 
+                    Focusable="False"
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Content="Название:" 
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center"/>
+                <TextBox 
+                    Grid.Row="0"
+                    Grid.Column="1" 
+                    IsTabStop="False"
+                    Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Justify"
+                    Margin="0,14,1,13"/>
+
+                <Label 
+                    Focusable="False"
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    Content="Цена(в рублях):" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center"/>
+                <TextBox 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    IsTabStop="False"
+                    Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Justify"
+                    Margin="0,14,1,13"/>
+
+                <Label 
+                    Focusable="False"
+                    Grid.Row="2" 
+                    Grid.Column="0" 
+                    Content="Количество:" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center"/>
+                <TextBox 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    IsTabStop="False"
+                    Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Justify"
+                    Margin="0,14,1,13"/>
+
+                <Label 
+                    Focusable="False"
+                    Grid.Row="3" 
+                    Grid.Column="0" 
+                    Content="Вес(в граммах):" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center"/>
+                <TextBox 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    IsTabStop="False"
+                    Text="{Binding Weight, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Justify"
+                    Margin="0,14,1,13"/>
+
+                <Label 
+                    Focusable="False"
+                    Grid.Row="4" 
+                    Grid.Column="0" 
+                    Content="Цвет:" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center" />
+                <TextBox 
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    IsTabStop="False"
+                    Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}"
+                    VerticalContentAlignment="Center"
+                    TextAlignment="Justify"
+                    Margin="0,14,1,13" />
+
+                <Label 
+                    Focusable="False"
+                    Grid.Row="5" 
+                    Grid.Column="0" 
+                    Content="Описание:" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center" 
+                    VerticalContentAlignment="Center"/>
+                <TextBox 
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    IsTabStop="False"
+                    AcceptsReturn="True"
+                    Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify" 
+                    Height="294" 
+                    VerticalAlignment="Bottom" 
+                    Margin="0,0,0,6" 
+                    HorizontalAlignment="Left" 
+                    Width="259"/>
+            </Grid>
+        </Border>
+
+        <Button 
+            Content="Отменить" 
+            Command="{Binding Cancel}"
+            BorderThickness="0"
+            Background="#5181b8" 
+            Foreground="AliceBlue"
+            FontWeight="Bold"
+            HorizontalAlignment="Left" 
+            Margin="5,659,0,12" 
+            Width="154"/>
+
+        <Button 
+            Content="Сохранить" 
+            Command="{Binding SaveNewProduct}"
+            BorderThickness="0"
+            Background="#5181b8" 
+            Foreground="AliceBlue"
+            FontWeight="Bold"
+            Margin="552,659,16,12"/>
+    </Grid>
+</UserControl>

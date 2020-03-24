@@ -1,0 +1,60 @@
+﻿<Window x:Class="InformationSystemsAndTechnologies.View.Dialog.RewriteRightsViewDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vmD="clr-namespace:InformationSystemsAndTechnologies.ViewModel.Dialog"
+        mc:Ignorable="d"
+        Title="Изменение прав" Height="328" Width="328" Focusable="False" WindowStartupLocation="CenterScreen" Background="FloralWhite" ResizeMode="CanMinimize">
+
+    <Window.DataContext>
+        <vmD:RewriteRightsViewModelDialog/>
+    </Window.DataContext>
+
+    <Grid>
+        <StackPanel Margin="40,63,40,162">
+            <Label 
+                Focusable="False"
+                Content="Логин" 
+                Height="35"
+                FontSize="19"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"/>
+            <TextBox 
+                IsTabStop="True"
+                Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" 
+                Height="28" 
+                FontSize="19"
+                FontWeight="Bold"
+                Margin="9,0"/>
+        </StackPanel>
+
+        <Button 
+            Focusable="False"
+            Content="Сохранить"
+            Command="{Binding SaveRights}"
+            Click="ButtonBase_OnClick"
+            BorderThickness="0"
+            Background="#5181b8" 
+            Foreground="AliceBlue"
+            FontSize="12"
+            FontWeight="Bold"
+            Margin="186,163,49,0" 
+            VerticalAlignment="Top" 
+            Height="28"/>
+
+        <Button 
+            Focusable="False"
+            Content="Отменить"
+            IsCancel="True"
+            BorderThickness="0"
+            Background="#5181b8" 
+            Foreground="AliceBlue"
+            FontSize="12"
+            FontWeight="Bold"
+            Margin="49,163,186,0" 
+            VerticalAlignment="Top" 
+            Height="28"/>
+
+    </Grid>
+</Window>
