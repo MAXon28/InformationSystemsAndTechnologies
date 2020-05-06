@@ -169,5 +169,6 @@
             Width= "722"
             Height= "699"
             Content= "{Binding AnotherPage}" />
+
     </Grid>
 </UserControl>

@@ -74,7 +74,11 @@ namespace InformationSystemsAndTechnologies.Model
         {
             int index = listProducts.IndexOf(GetElementById(id));
             listProducts[index].Count = count;
-            await Task.Run(() => UpdateCountDb(id, count));
+            if (count <= 10)
+            {
+                ReportsLogic.GetInstance().AddNewProductInReport(listProducts[index]);
+            }
+            await Task.Run(UpdateCountDb);
         }
 
         public void UpdateCount(List<int> idList)
@@ -138,10 +142,8 @@ namespace InformationSystemsAndTechnologies.Model
             internetMarketContext.SaveChanges();
         }
 
-        private void UpdateCountDb(int id, int count)
+        private void UpdateCountDb()
         {
-            Product product = internetMarketContext.Products.Find(id);
-            product.Count = count;
             internetMarketContext.SaveChanges();
         }
 
@@ -152,6 +154,10 @@ namespace InformationSystemsAndTechnologies.Model
             {
                 Product product = internetMarketContext.Products.Find(id);
                 product.Count = countProducts[index];
+                if (countProducts[index] <= 10)
+                {
+                    ReportsLogic.GetInstance().AddNewProductInReport(product);
+                }
                 internetMarketContext.SaveChanges();
                 index++;
             }
@@ -328,127 +334,3 @@ namespace InformationSystemsAndTechnologies.Model
         }
     }
 }
-/**using (internetMarketContext = new InternetMarketContext())
-            {
-                if (!internetMarketContext.Products.Any())
-                {
-                    internetMarketContext.Products.Add(new Product
-                    {
-                        Name = "Смартфон Apple iPhone 11 Pro",
-                        Price = 105000,
-                        Count = 28,
-                        Weight = 188,
-                        Color = "Золотой",
-                        Description = @"смартфон с iOS 13
-                        поддержка двух SIM - карт(nano SIM + eSIM)
-                        экран 5.8, разрешение 2436x1125
-                        три камеры 12 МП / 12 МП / 12 МП,
-                        автофокус
-                        память 512 ГБ,
-                        без слота для карт памяти
-                        3G,
-                        4G LTE,
-                        LTE-A,
-                        Wi-Fi,
-                        Bluetooth,
-                        NFC"
-                    });
-
-                    internetMarketContext.Products.Add(new Product
-                    {
-                        Name = "Смартфон Apple iPhone 11",
-                        Price = 70000,
-                        Count = 28,
-                        Weight = 194,
-                        Color = "Белый",
-                        Description = @"смартфон с iOS 13
-                        поддержка двух SIM-карт (nano SIM+eSIM)
-                        экран 6.1,
-                        разрешение 1792x828
-                        двойная камера 12 МП / 12 МП,
-                        автофокус
-                        память 256 ГБ,
-                        без слота для карт памяти
-                        3G,
-                        4G LTE,
-                        LTE-A,
-                        Wi-Fi,
-                        Bluetooth,
-                        NFC"
-                    });
-
-                    internetMarketContext.Products.Add(new Product
-                    {
-                        Name = "Смартфон Samsung Galaxy Note 10+",
-                        Price = 70000,
-                        Count = 28,
-                        Weight = 196,
-                        Color = "Чёрный",
-                        Description = @"смартфон с Android 9.0 
-                        поддержка двух SIM-карт
-                        экран 6.8,
-                        разрешение 3040x1440
-                        четыре камеры 12 МП / 16 МП / 12 МП,
-                        автофокус
-                        память 512 ГБ,
-                        слот для карты памяти
-                        3G,
-                        4G LTE,
-                        LTE-A,
-                        Wi-Fi,
-                        Bluetooth,
-                        NFC
-                        объем оперативной памяти 12 ГБ
-                        аккумулятор 4300 мА⋅ч"
-                    });
-
-                    internetMarketContext.Products.Add(new Product
-                    {
-                        Name = "Смартфон Honor 20 Pro",
-                        Price = 30000,
-                        Count = 28,
-                        Weight = 182,
-                        Color = "Фантомный синий",
-                        Description = @"смартфон с Android 9.0
-                        поддержка двух SIM-карт
-                        экран 6.26,
-                        разрешение 2340x1080
-                        четыре камеры 48 МП / 16 МП / 8 МП / 2 МП,
-                        автофокус
-                        память 256 ГБ,
-                        без слота для карт памяти
-                        3G,
-                        4G LTE,
-                        Wi-Fi,
-                        Bluetooth,
-                        NFC
-                        объем оперативной памяти 8 ГБ
-                        аккумулятор 4000 мА⋅ч"
-                    });
-
-                    internetMarketContext.Products.Add(new Product
-                    {
-                        Name = "Смартфон Xiaomi Mi Note 10 Pro",
-                        Price = 40000,
-                        Count = 28,
-                        Weight = 208,
-                        Color = "Зелёный",
-                        Description = @"смартфон с Android 9.0
-                        поддержка двух SIM-карт
-                        экран 6.26,
-                        разрешение 2340x1080
-                        четыре камеры 48 МП / 16 МП / 8 МП / 2 МП,
-                        автофокус
-                        память 256 ГБ,
-                        без слота для карт памяти
-                        3G,
-                        4G LTE,
-                        Wi-Fi,
-                        Bluetooth,
-                        NFC
-                        объем оперативной памяти 8 ГБ
-                        аккумулятор 4000 мА⋅ч"
-                    });
-
-                    internetMarketContext.SaveChanges();
-                }*/

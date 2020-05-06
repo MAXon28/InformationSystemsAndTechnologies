@@ -93,12 +93,15 @@
     <Compile Include="DataBase\History.cs" />
     <Compile Include="DataBase\Order.cs" />
     <Compile Include="DataBase\Product.cs" />
+    <Compile Include="DataBase\Report.cs" />
     <Compile Include="DataBase\User.cs" />
     <Compile Include="Model\HistoriesLogic.cs" />
     <Compile Include="Model\ProductsLogic.cs" />
+    <Compile Include="Model\ReportsLogic.cs" />
     <Compile Include="Model\UsersLogic.cs" />
     <Compile Include="SideClasses\Check.cs" />
     <Compile Include="SideClasses\CheckInformation.cs" />
+    <Compile Include="SideClasses\CheckForPersonal.cs" />
     <Compile Include="ViewModel\Dialog\AboutCheckViewModelDialog.cs" />
     <Compile Include="ViewModel\Dialog\AboutProductViewModelDialog.cs" />
     <Compile Include="ViewModel\Dialog\RewriteLoginViewModelDialog.cs" />
@@ -113,7 +116,9 @@
     <Compile Include="ViewModel\NewProductViewModel.cs" />
     <Compile Include="ViewModel\NewStaffViewModel.cs" />
     <Compile Include="ViewModel\NewUserViewModel.cs" />
+    <Compile Include="ViewModel\OrdersPageViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\ReportPageViewModel.cs" />
     <Compile Include="View\Dialog\AboutCheckViewDialog.xaml.cs">
       <DependentUpon>AboutCheckViewDialog.xaml</DependentUpon>
     </Compile>
@@ -158,6 +163,12 @@
     </Compile>
     <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrdersPageView.xaml.cs">
+      <DependentUpon>OrdersPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportPageView.xaml.cs">
+      <DependentUpon>ReportPageView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Dialog\AboutCheckViewDialog.xaml">
       <SubType>Designer</SubType>
@@ -232,6 +243,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrdersPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

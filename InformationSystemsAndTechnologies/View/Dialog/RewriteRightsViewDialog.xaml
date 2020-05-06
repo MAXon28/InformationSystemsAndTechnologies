@@ -15,7 +15,7 @@
         <StackPanel Margin="40,63,40,162">
             <Label 
                 Focusable="False"
-                Content="Логин" 
+                Content="Права" 
                 Height="35"
                 FontSize="19"
                 HorizontalContentAlignment="Center"

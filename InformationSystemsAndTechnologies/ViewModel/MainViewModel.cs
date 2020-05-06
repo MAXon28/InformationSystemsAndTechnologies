@@ -90,7 +90,7 @@ namespace InformationSystemsAndTechnologies.ViewModel
                     break;
                 case 1:
                     MarketPage = new MarketPagePersonalView();
-                    MarketPage.DataContext = new MarketPagePersonalViewModel();
+                    //MarketPage.DataContext = new MarketPagePersonalViewModel();
                     break;
                 case 2:
                     MarketPage = new MarketPageAdminView();

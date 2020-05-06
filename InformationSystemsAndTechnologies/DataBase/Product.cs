@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Collections.Generic;
+using GalaSoft.MvvmLight;
 
 namespace InformationSystemsAndTechnologies.DataBase
 {
@@ -17,5 +18,12 @@ namespace InformationSystemsAndTechnologies.DataBase
         public string Color { get; set; }
 
         public string Description { get; set; }
+
+        public ICollection<Report> Reports { get; set; }
+
+        public Product()
+        {
+            Reports = new List<Report>();
+        }
     }
 }

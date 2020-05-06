@@ -40,6 +40,25 @@
             </Grid>
         </Border>
 
+        <Button 
+            Content="Заказы"
+            Command="{Binding Orders}"
+            BorderThickness="1, 0, 1, 1"
+            Background="Azure" 
+            Foreground="Green"
+            FontWeight="Bold"
+            HorizontalAlignment="Left" 
+            Margin="444,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="128" 
+            Height="39">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="0, 0, 3, 3"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
         <DockPanel Width="Auto" Margin="0,109,357,0">
             <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto" CanContentScroll="True" HorizontalAlignment="Left" Width="365">
                 <ItemsControl 
@@ -132,7 +151,8 @@
                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                     VerticalContentAlignment="Center"
                     TextAlignment="Justify"
-                    Margin="0,14,0,13" Grid.Column="1"/>
+                    Margin="0,14,0,13" 
+                    Grid.Column="1"/>
                 <Button 
                     Focusable="False"
                     Grid.Row="0"
@@ -315,17 +335,58 @@
             BorderThickness="0"
             Background="#5181b8" 
             Foreground="AliceBlue"
-            FontWeight="Bold"
-            HorizontalAlignment="Left" 
-            Margin="434,55,0,0" 
+            FontWeight="Bold" 
+            Margin="461,55,160,0" 
             VerticalAlignment="Top" 
-            Width="101" 
             Height="44">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="3"/>
                 </Style>
             </Button.Resources>
+        </Button>
+
+        <Button 
+            Name="ButtonReport"
+            Content="!"
+            Command="{Binding Report}"
+            BorderThickness="0.5, 0, 0.5, 0.5"
+            FontWeight="Bold"
+            HorizontalAlignment="Left" 
+            Margin="596,0,0,0" 
+            VerticalAlignment="Top" 
+            Width="17" 
+            Height="39">
+            <Button.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CountSmall, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="0, 0, 3, 3"/>
+                </Style>
+            </Button.Resources>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="00:00:00" 
+                                        RepeatBehavior="Forever" 
+                                        Storyboard.TargetName="ButtonReport" 
+                                        Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)">
+                                <ColorAnimation From="#DCDCDC" To="#FFFF00" Duration="0:0:3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.ToolTip>
+                Некоторые товары закончились/заканчиваются
+            </Button.ToolTip>
         </Button>
 
         <Button 
@@ -350,6 +411,6 @@
             Focusable="False"
             Width="722"
             Height="699"
-            Content="{Binding AddNewProduct}"/>
+            Content="{Binding NewPage}"/>
     </Grid>
 </UserControl>

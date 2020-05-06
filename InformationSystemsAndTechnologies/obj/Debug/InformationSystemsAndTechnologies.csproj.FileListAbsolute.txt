@@ -66,3 +66,7 @@ D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\
 D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\InformationSystemsAndTechnologies.csprojAssemblyReference.cache
 D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\NewUserView.g.cs
 D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\NewUserView.baml
+D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\OrdersPageView.g.cs
+D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\OrdersPageView.baml
+D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\ReportPageView.g.cs
+D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\obj\Debug\View\ReportPageView.baml

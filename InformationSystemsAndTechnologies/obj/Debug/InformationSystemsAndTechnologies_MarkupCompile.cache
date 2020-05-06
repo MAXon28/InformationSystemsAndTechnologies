@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\ProgiBez\InformationSystemsAndTechnologies\InformationSystemsAndTechnologies\App.xaml
-16-1539878403
+18-1911782399
 
-48-1639180875
+551484694414
 1281821105765
-View\Dialog\AboutCheckViewDialog.xaml;View\Dialog\AboutProductViewDialog.xaml;View\EditStaffView.xaml;View\EditUserView.xaml;View\MarketPageUserView.xaml;View\NewStaffView.xaml;View\Dialog\RewriteLoginViewDialog.xaml;View\Dialog\RewritePasswordViewDialog.xaml;View\Dialog\RewriteRightsViewDialog.xaml;View\MainWindow.xaml;View\MarketPageAdminView.xaml;View\MarketPageDirectorView.xaml;View\MarketPagePersonalView.xaml;View\NewProductView.xaml;View\NewUserView.xaml;View\OrderView.xaml;
+View\Dialog\AboutCheckViewDialog.xaml;View\Dialog\AboutProductViewDialog.xaml;View\EditStaffView.xaml;View\EditUserView.xaml;View\MarketPageUserView.xaml;View\NewStaffView.xaml;View\Dialog\RewriteLoginViewDialog.xaml;View\Dialog\RewritePasswordViewDialog.xaml;View\Dialog\RewriteRightsViewDialog.xaml;View\MainWindow.xaml;View\MarketPageAdminView.xaml;View\MarketPageDirectorView.xaml;View\MarketPagePersonalView.xaml;View\NewProductView.xaml;View\NewUserView.xaml;View\OrderView.xaml;View\OrdersPageView.xaml;View\ReportPageView.xaml;
 
 False
 

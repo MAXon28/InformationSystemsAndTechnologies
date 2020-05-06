@@ -16,5 +16,7 @@ namespace InformationSystemsAndTechnologies.Context
         public DbSet<History> Histories { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Report> Reports { get; set; }
     }
 }

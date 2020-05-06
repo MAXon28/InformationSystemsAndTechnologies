@@ -12,6 +12,7 @@ namespace InformationSystemsAndTechnologies.Model
     {
         private static HistoriesLogic historiesLogic;
         private InternetMarketContext internetMarketContext;
+        private List<CheckForPersonal> listOfChecks;
 
         public HistoriesLogic() { }
 
@@ -23,6 +24,47 @@ namespace InformationSystemsAndTechnologies.Model
                 where u.Id == userId
                 select new Check {Id = h.Id, Price = h.Price};
             return list.Cast<Check>().ToList();
+        }
+
+        public List<CheckForPersonal> GetChecksForPersonal()
+        {
+            internetMarketContext = new InternetMarketContext();
+            IEnumerable list = from h in internetMarketContext.Histories
+                join u in internetMarketContext.Users on h.UserId equals u.Id
+                select new CheckForPersonal { FullName = u.Surname + " " + u.Name, Id = h.Id, Price = h.Price };
+            listOfChecks = list.Cast<CheckForPersonal>().ToList();
+            return listOfChecks;
+        }
+
+        public List<CheckForPersonal> GetSearchResponse(string searchRequest)
+        {
+            if (searchRequest == "")
+            {
+                return listOfChecks;
+            }
+            List<CheckForPersonal> listResult = new List<CheckForPersonal>();
+            for (int i = 0; i < listOfChecks.Count; i++)
+            {
+                if (listOfChecks[i].FullName.ToUpper().Contains(searchRequest.ToUpper()))
+                {
+                    listResult.Add(listOfChecks[i]);
+                }
+            }
+            return listResult;
+        }
+
+        public List<CheckForPersonal> GetSearchResponse(int searchRequest)
+        {
+            List<CheckForPersonal> listResult = new List<CheckForPersonal>();
+            for (int i = 0; i < listOfChecks.Count; i++)
+            {
+                if (listOfChecks[i].Id == searchRequest)
+                { 
+                    listResult.Add(listOfChecks[i]);
+                    return listResult;
+                }
+            }
+            return listResult;
         }
 
         public List<CheckInformation> GetCheckInformation(int historyId)
