@@ -1,0 +1,4 @@
+﻿  SiAOD.cpp
+D:\ProgiBez\SiAOD\SiAOD\SiAOD.cpp(31,26): warning C4018: <: несоответствие типов со знаком и без знака
+D:\ProgiBez\SiAOD\SiAOD\SiAOD.cpp(45,22): warning C4018: <: несоответствие типов со знаком и без знака
+  SiAOD.vcxproj -> D:\ProgiBez\SiAOD\Debug\SiAOD.exe
